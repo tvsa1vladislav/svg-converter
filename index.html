@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>SVG Converter</title>
+</head>
+<body>
+  <h1>SVG Converter</h1>
+  
+  <!-- Поле ввода текста для конвертации -->
+  <p>Введите описание для конвертации в SVG:</p>
+  <textarea id="inputText" rows="6" cols="50"></textarea>
+  <br /><br />
+  
+  <!-- Кнопка запуска конвертации -->
+  <button onclick="convertToSVG()">Преобразовать в SVG</button>
+  
+  <hr />
+  
+  <!-- Блок, в котором будет отображаться результат -->
+  <h2>Результат:</h2>
+  <div id="svgContainer" style="border: 1px solid #ccc; padding: 10px;"></div>
+  
+  <script>
+    function convertToSVG() {
+      // Получаем текст, введённый пользователем
+      const input = document.getElementById('inputText').value;
+      
+      // Здесь будет логика парсинга/конвертации текста в SVG-код.
+      // Для примера мы просто вставим статический SVG,
+      // но позже вы сможете заменить это на реальный алгоритм.
+      let svgCode = `
+        <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="100" r="50" fill="red" />
+          <text x="100" y="105" fill="white" font-size="20" text-anchor="middle" alignment-baseline="middle">
+            SVG
+          </text>
+        </svg>
+      `;
+      
+      // Если нужно, можно как-то интерпретировать текст:
+      // например, если пользователь вводит "circle 50 red" – вы рисуете красный круг.
+      // Пока это демонстрационный пример, поэтому мы просто выводим заготовку.
+
+      // Помещаем сгенерированный SVG в контейнер
+      document.getElementById('svgContainer').innerHTML = svgCode;
+    }
+  </script>
+</body>
+</html>
